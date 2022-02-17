@@ -50,7 +50,7 @@ fi
 storage_dirname="bitkey-data"
 mount_path="/mnt/bitkey-data"
 
-mode=$1
+mode=`cat /proc/cmdline | awk -F'bitkey=' '{ print $2 }' | cut -f 1 -d ' '`
 case "$mode" in
     cold-offline|cold-online|hot-online) ;;
     *) fatal "unsupported mode: $mode"
@@ -74,7 +74,7 @@ fi
 # setup info dialog
 infofile=$(tempfile)
 info "loading..."
-info-dialog --title="electrum-wrapper" $infofile &
+#info-dialog --title="electrum-wrapper" $infofile &
 trap "rm -f -- '$infofile'" INT TERM EXIT
 
 # locate and setup storage
@@ -130,8 +130,8 @@ wallet_path=$mount_path/$mode
 electrum $extra_args --wallet=$wallet_path
 
 # setup info dialog
-infofile=$(tempfile)
-info-dialog --title="electrum-wrapper" $infofile &
+infofile=/tmp/electrum.log
+#info-dialog --title="electrum-wrapper" $infofile &
 trap "rm -f -- '$infofile'" INT TERM EXIT
 
 echo seedless watch wallet is disabled for lack of the deseed function

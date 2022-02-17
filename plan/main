@@ -1,3 +1,5 @@
+#include <turnkey/base>
+
 #include <x11>
 #include <boot>
 #include <laptop>
@@ -7,45 +9,4 @@
 #include "system"
 #include "desktop"
 #include "apps"
-
-firmware-linux-free
-firmware-linux-nonfree
-firmware-atheros
-firmware-bnx2
-firmware-bnx2x
-firmware-brcm80211
-firmware-ipw2x00
-firmware-iwlwifi
-firmware-libertas
-firmware-ralink
-firmware-realtek
-
-task-print-server
-system-config-printer
-foomatic-db-engine
-hp-ppd
-hplip
-openprinting-ppds
-printer-driver-brlaser
-printer-driver-c2050
-printer-driver-c2esp
-printer-driver-cjet
-printer-driver-dymo
-printer-driver-escpr
-printer-driver-foo2zjs
-printer-driver-gutenprint
-printer-driver-hpcups
-printer-driver-hpijs
-printer-driver-m2300w
-printer-driver-min12xxw
-printer-driver-pnm2ppa
-printer-driver-postscript-hp
-printer-driver-ptouch
-printer-driver-pxljr
-printer-driver-sag-gdi
-printer-driver-splix
-cups-browsed
-avahi-daemon
-
-libgconf-2-4
-
+#include "firmware"

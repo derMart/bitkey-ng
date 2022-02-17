@@ -1,36 +1,30 @@
-mrxvt
-vim-gtk
+nano
+rxvt-unicode
+vim
 chromium
-myspell-en-us
+chromium-sandbox
+hunspell-en-us
 thunar
 thunar-volman
 gvfs
 eject
+scrypt
 
-python-setuptools       /* electrum: installation */
-python3-setuptools		/* electrum: installation */
-python-sip              /* electrum: virtual package providing sip-api-8.1 */
-python-qt4              /* electrum: qt gui interface */
-python3-pyqt5			/* electrum: qt gui interface */
-pyqt4-dev-tools			/* electrum: compile icons */
-pyqt5-dev-tools			/* electrum: compile icons */
-patch                   /* electrum: apply patches */
-libusb-1.0-0-dev		/* electrum-dash */
+// Electrum dependencies
+python3-setuptools
+python3-pip
+python3-pyqt5
+python3-cryptography
+libsecp256k1-0
 
-cheese					/* required for webcam */
-qtqr					/* QR code scanner for webcam */
-zbar-tools				/* QR utilities */
+// Webcam support
+cheese
 
-p7zip-full              /* as per feature request #11 */
+// QR Code scanner
+qtqr
 
-secure-delete
+// QR code utils
+zbar-tools
 
-florence                /* onscreen keyboard */
-at-spi2-core            /* required for florence */
-
-keepassx				/* as per feature request #52 */
-libqt5x11extras5		/* dependency for keepassxc */
-libykpers-1-1			/* dependency for keepassxc */
-
-python-psutil			/* dependency for armory */
-libstdc++6			/* dependency for armory */
+// On-screen keyboard
+onboard

@@ -2,7 +2,7 @@ wget
 curl
 ethtool
 netbase
-iproute
+iproute2
 ntpdate
 ifupdown
 net-tools
@@ -12,4 +12,3 @@ iputils-ping
 wpasupplicant
 wireless-tools
 isc-dhcp-client
-wicd
