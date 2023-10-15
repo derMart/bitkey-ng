@@ -6,7 +6,7 @@ CDROOT ?= gfxboot-turnkey
 HOSTNAME ?= $(shell basename $(shell pwd))
 CONF_VARS += HOSTNAME ROOT_PASS NONFREE
 
-#COMMON_OVERLAYS := turnkey.d $(COMMON_OVERLAYS)
+COMMON_OVERLAYS := turnkey.d $(COMMON_OVERLAYS)
 
 #COMMON_CONF := turnkey.d $(COMMON_CONF)
 
@@ -15,7 +15,7 @@ COMMON_REMOVELISTS_FINAL += turnkey
 
 FAB_SHARE_PATH ?= /usr/share/fab
 
-APT_OVERLAY = fab-apply-overlay $(COMMON_OVERLAYS_PATH)/bootstrap_apt $0/bootstrap
+APT_OVERLAY = fab-apply-overlay $(COMMON_OVERLAYS_PATH)/bootstrap_apt $O/bootstrap
 
 # below hacks allow inheritors to define their own hooks, which will be
 # prepended. warning: first line *needs* to be empty for this to work
@@ -26,6 +26,8 @@ define _bootstrap/post
 	$(APT_OVERLAY)
 	fab-chroot $O/bootstrap "echo nameserver 8.8.8.8 > /etc/resolv.conf";
 	fab-chroot $O/bootstrap "echo nameserver 8.8.4.4 >> /etc/resolv.conf";
+	mkdir -p $O/bootstrap/usr/local/share/ca-certificates/;
+	cp /usr/local/share/ca-certificates/squid_proxyCA.crt $O/bootstrap/usr/local/share/ca-certificates/ || true;
 	fab-chroot $O/bootstrap --script $(COMMON_CONF_PATH)/bootstrap_apt;
 endef
 bootstrap/post += $(_bootstrap/post)
