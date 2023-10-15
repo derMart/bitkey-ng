@@ -15,4 +15,4 @@ isc-dhcp-client
 
 // tor
 tor
-deb.torproject.org-keyring
+//deb.torproject.org-keyring
