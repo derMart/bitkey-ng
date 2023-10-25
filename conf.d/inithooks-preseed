@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
-MASTERPASS=$(mcookie | cut -b 1-8)
+#MASTERPASS=$(mcookie | cut -b 1-8)
+MASTERPASS="bitkey"
 
 cat > /etc/inithooks.conf <<EOF
 export ROOT_PASS=${MASTERPASS}

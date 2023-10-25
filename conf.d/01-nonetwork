@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+# remove network drivers completely
+rm -rf /usr/lib/modules/*/kernel/drivers/net

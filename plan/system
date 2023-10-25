@@ -1,31 +1,13 @@
 inithooks
-
 turnkey-version
 turnkey-sysinfo
 
-gnupg
-gpg-agent
-pinentry-gtk2
-ca-certificates
+/* jiiterentropy-rngd provides entropy from cpu jitter; req'd in buster to */
+/* seed entropy in early boot (especially useful when live booting).       */
+jitterentropy-rngd
 
-rsyslog
-iptables
-
-less
-unzip
-psmisc
-procps
-whiptail
-localepurge
-lsb-release
-busybox
+confconsole
 console-setup
-bash-completion
-libperl4-corelibs-perl
-lsof
-zenity
-cryptsetup
+etckeeper
 sudo
-
 dosfstools
-
